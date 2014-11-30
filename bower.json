@@ -1,0 +1,19 @@
+{
+  "name": "Idle-Thumbs",
+  "version": "0.0.2",
+  "homepage": "https://github.com/Noah-Huppert/Idle-Thumbs",
+  "authors": [
+    "Noah Huppert"
+  ],
+  "description": "A Chrome extension for listening to Idle Thumbs podcasts",
+  "main": "Gruntfile.coffee",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "ember": "~1.8.1",
+    "ember-data": "~0.0.14"
+  },
+  "resolutions": {
+    "ember": "~1.8.1"
+  }
+}

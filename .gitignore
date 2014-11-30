@@ -1,0 +1,8 @@
+#Build directory
+build
+
+#Node packages
+node_modules
+
+#Bower dependencies
+libs

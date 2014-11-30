@@ -1,0 +1,28 @@
+{
+  "name": "Idle-Thumbs",
+  "version": "0.0.2",
+  "description": "A Chrome extension for listening to Idle Thumbs podcasts",
+  "main": "Gruntfile.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Noah-Huppert/Idle-Thumbs.git"
+  },
+  "author": "Noah Huppert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Noah-Huppert/Idle-Thumbs/issues"
+  },
+  "homepage": "https://github.com/Noah-Huppert/Idle-Thumbs",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-bower-task": "^0.4.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-coffee": "^0.12.0",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-manifest-sync": "^1.0.0"
+  }
+}
