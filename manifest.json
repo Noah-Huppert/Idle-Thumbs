@@ -1,5 +1,20 @@
 {
   "name": "Idle-Thumbs",
   "version": "0.0.1",
-  "description": "A Chrome extension for listening to Idle Thumbs podcasts"
+  "description": "A Chrome extension for listening to Idle Thumbs podcasts",
+  "manifests": {
+    "npm": "package.json",
+    "bower": "bower.json",
+    "chromeExtension": {
+      "dest": "build/manifest.json",
+      "manifest_version": "2",
+      "default_locale": "en",
+      "icon": {
+        "16": "images/icon16.png"
+      },
+      "background": {
+        "persistent": "true"
+      }
+    }
+  }
 }

@@ -1,14 +1,5 @@
 gruntConfig = (grunt) ->
   grunt.initConfig
-    #Compile Coffeescript
-    coffee:
-      compile:
-        expand: true
-        cwd: "src/scripts/coffeescript"
-        src: ["*.coffee"]
-        dest: "build/scripts/javascript"
-        ext: ".js"
-
     #Install Bower dependencies
     bower:
       install:
@@ -31,36 +22,42 @@ gruntConfig = (grunt) ->
       main:
         options:
           primaryManifest: "manifest.json"
-          manifests:
-            npm: "package.json"
-            bower: "bower.json"
-            chromeExtension:
-              dest: "build/manifest.json"
-              manifest_version: 2
-              default_locale: "en"
-              icon: "images/icon.png"
-              background:
-                persistent: true
 
     #Clean directories
     clean:
       javascript: ["build/scripts/javascript"]
       css: ["build/styles/css"]
 
+    #Copy files
+    copy:
+      javascript:
+        expand: true
+        cwd: "src/scripts/javascript"
+        src: "**/*"
+        dest: "build/scripts/javascript"
+      images:
+        expand: true
+        cwd: "src/images"
+        src: "**/*"
+        dest: "build/images"
+
     #Watch
     watch:
-      coffeescript:
-        files: "src/scripts/coffeescript/*.coffee"
-        tasks: ["buildCoffeescript"]
+      javascript:
+        files: "src/scripts/javascript/*.js"
+        tasks: ["buildJavascript"]
       sass:
         files: "src/styles/sass/*.sass"
         tasks: ["buildSass"]
+      images:
+        files: "src/images"
+        tasks: ["buildImages"]
       manifest:
         files: "manifest.json"
         tasks: ["buildManifests"]
 
   #Load Grunt tasks
-  grunt.loadNpmTasks "grunt-contrib-coffee"
+  grunt.loadNpmTasks "grunt-contrib-copy"
   grunt.loadNpmTasks "grunt-contrib-clean"
   grunt.loadNpmTasks "grunt-bower-task"
   grunt.loadNpmTasks "grunt-contrib-sass"
@@ -71,8 +68,9 @@ gruntConfig = (grunt) ->
   grunt.registerTask "build", ["installBower", "buildCoffeescript"]
 
   grunt.registerTask "installBower", ["bower:install"]
-  grunt.registerTask "buildCoffeescript", ["clean:javascript", "coffee:compile"]
+  grunt.registerTask "buildJavascript", ["clean:javascript", "copy:javascript"]
   grunt.registerTask "buildSass", ["clean:css", "sass:compile"]
   grunt.registerTask "buildManifests", ["manifestSync:main"]
+  grunt.registerTask "buildImages", ["copy:images"]
 
 module.exports = gruntConfig
