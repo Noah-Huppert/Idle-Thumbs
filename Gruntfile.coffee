@@ -87,7 +87,7 @@ gruntConfig = (grunt) ->
         files: "src/views/haml/**/*"
         tasks: ["buildHaml"]
       libs:
-        files: ["libs/**/*"]
+        files: ["bower.json"]
         tasks: ["buildBower"]
 
   #Load Grunt tasks
@@ -102,8 +102,7 @@ gruntConfig = (grunt) ->
   #Register Grunt tasks
   grunt.registerTask "build", ["buildJavascript", "buildSass", "buildManifests", "buildImages"]
 
-  grunt.registerTask "installBower", ["bower:install", "buildBower"]
-  grunt.registerTask "buildBower", ["clean:libs", "copy:libs"]
+  grunt.registerTask "buildBower", ["clean:libs", "bower:install", "copy:libs"]
   grunt.registerTask "buildJavascript", ["clean:javascript", "copy:javascript"]
   grunt.registerTask "buildSass", ["clean:css", "sass:compile"]
   grunt.registerTask "buildManifests", ["manifestSync:main"]

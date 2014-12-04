@@ -6,3 +6,6 @@ node_modules
 
 #Bower dependencies
 libs
+
+#Sass cache
+.sass-cache

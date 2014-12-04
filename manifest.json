@@ -14,8 +14,9 @@
       },
       "browser_action": {
         "default_icon": "images/icons/puffin16.png",
-        "default_popup": "views/player.html"
-      }
+        "default_popup": "views/popup.html"
+      },
+      "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
     }
   }
 }
