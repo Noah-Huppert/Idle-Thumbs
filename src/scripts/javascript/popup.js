@@ -48,3 +48,4 @@ App.ShowsRoute = Ember.Route.extend({
     return self.store.find("show");
   }
 });
+//TODO Link shows route with /views/shows.hbs

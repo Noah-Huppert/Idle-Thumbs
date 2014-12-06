@@ -17,5 +17,10 @@
         Player
       .tab(active="{{#link-to 'settings'}}true{{/}}")
         Settings
-    #context
-      {{outlet}}
+    #content
+      %script
+        %ul
+          {{#each show}}
+            %li
+
+          {{/each}}
