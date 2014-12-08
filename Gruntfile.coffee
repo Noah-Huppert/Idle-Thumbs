@@ -86,9 +86,6 @@ gruntConfig = (grunt) ->
       haml:
         files: "src/views/haml/**/*"
         tasks: ["buildHaml"]
-      libs:
-        files: ["bower.json"]
-        tasks: ["buildBower"]
 
   #Load Grunt tasks
   grunt.loadNpmTasks "grunt-contrib-copy"

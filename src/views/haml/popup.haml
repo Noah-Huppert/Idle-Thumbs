@@ -7,6 +7,7 @@
     %script(src="/libs/ember-data/ember-data.js")
     %script(src="/scripts/javascript/popup.js")
 
+    %link(<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic' rel='stylesheet' type='text/css')
     %link(href="/styles/popup.css" rel="stylesheet" type="text/css")
 
   %body
@@ -18,9 +19,12 @@
       .tab(active="{{#link-to 'settings'}}true{{/}}")
         Settings
     #content
-      %script
-        %ul
-          {{#each show}}
-            %li
-
-          {{/each}}
+      %script(type="text/x-handlebars" data-template-name="shows")
+        {{#each show in model}}
+            .show
+              .showHover
+                Play
+              <img {{bind-attr src=show.thumbnail}}>
+              .showTitle {{show.name}}
+              .showDescription {{show.description}}
+        {{/each}}
